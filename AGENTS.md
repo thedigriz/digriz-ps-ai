@@ -91,3 +91,9 @@ Modern hackers minimalism.
 - syntax highlight
 - "Copy" button as icon in top right corner
 - `quotes` - just copy on click
+
+### Outgoing links
+
+- Outgoing links should be replaced via /out/ like `https://fhasjkdfhjskd.dasd/dasdsa` -> `/out/fhasjkdfhjskd.dasd/dasdsa`
+- `/out/` should be added at `robots.txt` as `Disallow: /out/`
+- `/out/` should redirect to url
