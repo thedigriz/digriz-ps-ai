@@ -50,7 +50,9 @@
   <header>
     <nav aria-label="Main">
       <a href="/">Home</a>
-      <a href="/about/">About</a>
+      {% for p in collections.sectionPages %}
+      <a href="{{ p.url | url }}">{{ p.data.title or p.fileSlug }}</a>
+      {% endfor %}
     </nav>
   </header>
   <main id="content">

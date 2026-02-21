@@ -1,3 +1,8 @@
+---
+title: FreeDNS
+description: Free domains and subdomains, no SMS required.
+---
+
 # Free domains and subdomains, no SMS required
 
 [FreeDNS.afraid.org](/out/FreeDNS.afraid.org) offers free third-level domains and subdomains. Registration works with any email—I’d use something like @proton.me.

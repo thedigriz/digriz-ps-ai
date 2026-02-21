@@ -23,6 +23,16 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // Section pages: all content pages except index and drafts (.di.md)
+  eleventyConfig.addCollection("sectionPages", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("content/**/*.md").filter((p) => {
+      if (p.inputPath && p.inputPath.includes(".di.md")) return false;
+      const u = p.url || "";
+      if (u === "/" || u === "/index/") return false;
+      return true;
+    });
+  });
+
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("_redirects");
 
