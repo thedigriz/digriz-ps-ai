@@ -85,3 +85,9 @@ Signature Phrases/Patterns:
 ## Website style
 
 Modern hackers minimalism.
+
+### Code block
+
+- syntax highlight
+- "Copy" button as icon in top right corner
+- `quotes` - just copy on click
