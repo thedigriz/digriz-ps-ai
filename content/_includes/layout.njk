@@ -3,26 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or "Site" }}</title>
+  <title>{{ title or "Site" }}{% if title %} · digriz.ps.ai{% endif %}</title>
+  {% if description %}
+  <meta name="description" content="{{ description }}">
+  {% endif %}
+  <link rel="canonical" href="{{ page.url | url }}">
+  <meta name="theme-color" content="#0f0f0f">
   <style>
-    :root { --bg: #0f0f0f; --fg: #e0e0e0; --accent: #6b9; --muted: #888; }
-    * { box-sizing: border-box; }
-    body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; max-width: 42rem; margin: 0 auto; padding: 2rem; }
+    :root {
+      --bg: #0f0f0f;
+      --fg: #e0e0e0;
+      --accent: #6b9;
+      --muted: #888;
+      --measure: 42rem;
+      --line: 1.65;
+      --space: 1.5rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: var(--line);
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: var(--space);
+    }
     a { color: var(--accent); }
-    h1, h2, h3 { margin-top: 1.5em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    h1, h2, h3 { margin-top: 1.5em; line-height: 1.25; }
+    h1 { margin-top: 0; }
+    p { margin: 0 0 1em; }
     pre, code { background: #1a1a1a; padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.9em; }
-    pre { padding: 1rem; overflow-x: auto; }
+    pre { padding: 1rem; overflow-x: auto; margin: 1em 0; }
     pre code { padding: 0; }
     nav { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--muted); }
     nav a { margin-right: 1rem; }
+    .skip { position: absolute; inset-block-start: -2.5em; left: var(--space); z-index: 1; padding: 0.5em 0.75em; background: var(--fg); color: var(--bg); }
+    .skip:focus { inset-block-start: var(--space); }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--muted); font-size: 0.875rem; color: var(--muted); }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
-  <main>
-    {{ content | safe }}
+  <a href="#content" class="skip">Skip to content</a>
+  <header>
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+  <main id="content">
+    <article>
+      {{ content | safe }}
+    </article>
   </main>
+  <footer>
+    <p>digriz.ps.ai</p>
+  </footer>
 </body>
 </html>

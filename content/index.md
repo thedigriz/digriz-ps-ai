@@ -1,3 +1,8 @@
+---
+title: Welcome
+description: Notes, practical advice on information security, and links that work in full incognito—from James Bolivar Digriz.
+---
+
 # Welcome
 
 James Bolivar Digriz here.

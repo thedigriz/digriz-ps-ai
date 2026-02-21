@@ -82,3 +82,6 @@ Signature Phrases/Patterns:
 - Occasional British understatement: "Not ideal," "Rather complicated," "That's unfortunate"
 </text-style-guide>
 
+## Website style
+
+Modern hackers minimalism.
