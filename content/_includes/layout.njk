@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "Site" }}</title>
+  <style>
+    :root { --bg: #0f0f0f; --fg: #e0e0e0; --accent: #6b9; --muted: #888; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; max-width: 42rem; margin: 0 auto; padding: 2rem; }
+    a { color: var(--accent); }
+    h1, h2, h3 { margin-top: 1.5em; }
+    pre, code { background: #1a1a1a; padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.9em; }
+    pre { padding: 1rem; overflow-x: auto; }
+    pre code { padding: 0; }
+    nav { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--muted); }
+    nav a { margin-right: 1rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
